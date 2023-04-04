@@ -13,6 +13,7 @@ export class CRUDService {
     'Authentication': 'Bearer' + localStorage.getItem('token')
   });
   private url = 'http://localhost:3000/';
+  
   Insert(Details:StudentDetails):Observable<{}>{
     console.log(this.url , Details);
     return this.http.post<{}>(this.url + "Students/Insert",Details,{headers:this.headers});
