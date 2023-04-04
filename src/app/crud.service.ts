@@ -16,6 +16,6 @@ export class CRUDService {
   
   Insert(Details:StudentDetails):Observable<{}>{
     console.log(this.url , Details);
-    return this.http.post<{}>(this.url + "Students/Insert",Details,{headers:this.headers});
+    return this.http.post<{}>(this.url + "Students/Insert" , Details,{headers:this.headers});
   }
 }

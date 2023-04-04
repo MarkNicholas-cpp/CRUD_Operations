@@ -4,4 +4,14 @@
     <label for="Rollno" class="form-label">Roll Number:</label>
     <input type="text" name="Rollno" id="Rollno" class="form-control" [(ngModel)]="User.RollNumber">
     <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">
+    <div class="alert alert-success m-2" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
+
+    <!-- *ngIf="!(SuccessMsg =='')" the line Says that if the SuccessMsg variable is empty the hide this 
+        if the content. If not show this div....
+
+        
+        So SuccessMsg == '' ==> Gives true if the variable is fitted to Content at the line
+        this.Success = Data.Message in the ts file
+        -->
+
 </div>

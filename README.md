@@ -1,9 +1,6 @@
-Working on the Insert function Error:.............
-
-
-
-
-
+Insert Workig Succesfullly
+-->Added the Successs Msg
+-->Nothing changed in the service Used the Post method..
 
 
 

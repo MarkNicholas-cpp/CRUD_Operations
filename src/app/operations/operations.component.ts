@@ -16,15 +16,15 @@ export class OperationsComponent implements OnInit{
     Name: '',
     RollNumber: '',
   };
+  SuccessMsg = "";
   Insert() {
-    this.Service.Insert(this.User).subscribe((Data)=>{
+    this.Service.Insert(this.User).subscribe((Data:any)=>{
       if(Data){
-        console.log(Data);
+        this.SuccessMsg = Data.Message; //Update the SuccessMsg String if the Responce is Success..So that will be clear to the User that the Operation of the insert is Success
       }
       else{
         console.log("Error Fetching Data");
       }
     });
-    console.log(this.User);
   }
 }
