@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReadComponent } from './read/read.component';
+import { OperationsComponent } from './operations/operations.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'',pathMatch:'full',redirectTo:"Read"}
+  ,{path:'Read',component: ReadComponent},
+  {path:'Insert',component:OperationsComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

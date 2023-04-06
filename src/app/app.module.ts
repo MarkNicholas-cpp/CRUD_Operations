@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OperationsComponent } from './operations/operations.component';
+import { ReadComponent } from './read/read.component';
 
 @NgModule({
-  declarations: [AppComponent, OperationsComponent],
+  declarations: [AppComponent, OperationsComponent, ReadComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
