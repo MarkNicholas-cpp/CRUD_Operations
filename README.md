@@ -1,6 +1,10 @@
 Insert Workig Succesfullly
 -->Added the Successs Msg
--->Nothing changed in the service Used the Post method..
+-->Added the Failure message of the duplicate Insertion
+-->Tabular form of displaying data 
+-->Deleting the Record
+-->Reading the record
+-->Nothing changed in the service Used the Post method....
 
 
 
