@@ -15,7 +15,7 @@ import { CRUDService } from '../crud.service';
 export class OperationsComponent implements OnInit, OnDestroy {
   constructor(private Service: CRUDService) {}
   ngOnInit() {}
-  Subscription: Subscription = new Subscription;
+  Subscription: Subscription = new Subscription();
   User: StudentDetails = {
     Name: '',
     RollNumber: '',
@@ -26,37 +26,34 @@ export class OperationsComponent implements OnInit, OnDestroy {
     this.ErrorMsg = '';
     this.SuccessMsg = '';
 
-
-
-    this.Subscription = this.Service.Insert(this.User).subscribe(
-      (data)=>{
-        if(data){
-          console.log(data);
-        }
-        else{
-          console.log("Failed");
-        }
-      }
-    )
-  }
-
-
-  
-    // this.Subscription = this.Service.Insert(this.User).subscribe({
-    //   next: (Data: InsertedSuccess | UniqueConstraintError) => {
-    //     if ('errorNum' in Data) {
-    //       this.ErrorMsg = `${this.User.RollNumber} alredy Exists`;
-    //     } else {
-    //       this.SuccessMsg = `${this.User.RollNumber} Inserted Succesfully`;
+    //   this.Subscription = this.Service.Insert(this.User).subscribe(
+    //     (data)=>{
+    //       if(data){
+    //         console.log(data);
+    //       }
+    //       else{
+    //         console.log("Failed");
+    //       }
     //     }
-    //   },
-    //   error: (Error) => {
-    //     console.log(Error);
-    //   },
-    // }); this the another syntax for the Subscribe Its advanced Handling everything
+    //   )
+    // }
 
+    this.Subscription = this.Service.Insert(this.User).subscribe({
+      next: (Data: InsertedSuccess | UniqueConstraintError) => {
+        if ('errorNum' in Data) {
+          this.ErrorMsg = `${this.User.RollNumber} alredy Exists`;
+        } else {
+          this.SuccessMsg = `${this.User.RollNumber} Inserted Succesfully`;
+        }
+      },
+      error: (Error) => {
+        console.log(Error);
+      },
+    });
+    // this the another syntax for the Subscribe Its advanced Handling everything
+  }
+  
   ngOnDestroy() {
     this.Subscription.unsubscribe();
   }
-
 }

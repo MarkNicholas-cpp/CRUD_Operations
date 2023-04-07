@@ -36,8 +36,9 @@ export class CRUDService {
       `${this.url}Students/Delete${RollNumber}`
     );
   }
-
-  Function(Name: String): String {
-    return Name;
+  Update(RollNumber: String, Details: StudentDetails) {
+    return this.http.put(`${this.url}Students/Update${RollNumber}`, Details, {
+      headers: this.headers,
+    });
   }
 }
