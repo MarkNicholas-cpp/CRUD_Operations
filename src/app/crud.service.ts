@@ -16,6 +16,15 @@ export class CRUDService {
     'content-type': 'application/json',
     Authentication: 'Bearer' + localStorage.getItem('token'),
   });
+
+
+  FoodHeaders = new HttpHeaders({
+    'X-RapidAPI-Key': '9d95c08d75mshae57f7f480c131ap1443f3jsn5525ed1bd303',
+    'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com',
+  });
+
+
+  
   private url = 'http://localhost:3000/';
 
   Insert(
@@ -39,6 +48,14 @@ export class CRUDService {
   Update(RollNumber: String, Details: StudentDetails) {
     return this.http.put(`${this.url}Students/Update${RollNumber}`, Details, {
       headers: this.headers,
+    });
+  }
+
+
+
+  GetFood() {
+    return this.http.get('https://pizza-and-desserts.p.rapidapi.com/pizzas', {
+      headers: this.FoodHeaders,
     });
   }
 }

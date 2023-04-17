@@ -1,0 +1,16 @@
+<button class="btn btn-danger m-2" (click)="Pizzas()">Pizzas</button>
+
+
+
+<div *ngIf="!(Pizza.length==0)" class="grid">
+    <div *ngFor="let EachPizza of Pizza" >
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="EachPizza.img" alt="Pizza Img">
+            <div class="card-body">
+                <h5 class="card-title">{{EachPizza.name}},{{EachPizza.id}}</h5>
+                <p class="card-text">{{EachPizza.discription}}</p>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+        </div>
+    </div>
+</div>

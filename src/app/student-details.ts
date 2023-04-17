@@ -11,5 +11,14 @@ export interface InsertedSuccess {
   rowsAffected: Number;
 }
 export interface Read {
-    Result: [];
+  Result: [];
+}
+export interface Pizza {
+  id: Number;
+  discription: String;
+  img: String;
+  name: String;
+  price: Number;
+  quantity: Number;
+  veg: Boolean;
 }

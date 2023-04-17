@@ -1,0 +1,4 @@
+<label for="Id">Roll Number</label>
+<input type="text" name="Roll" id="Roll" class="form-control w-50" [value]="this.roll">
+<p>{{roll}}</p>
+<button (click)="this.roll = this.roll + 1;" class="btn btn-primary">Add 1</button>
