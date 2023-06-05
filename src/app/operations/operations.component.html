@@ -1,8 +1,9 @@
+
 <div class="form-group w-50 d-block mx-auto">
-    <label for="Name" class="form-label">Name:</label>
-    <input type="text" name="Name" id="Name" class="form-control" [(ngModel)]="User.Name">
     <label for="Rollno" class="form-label">Roll Number:</label>
     <input type="text" name="Rollno" id="Rollno" class="form-control" [(ngModel)]="User.RollNumber">
+    <label for="Name" class="form-label">Name:</label>
+    <input type="text" name="Name" id="Name" class="form-control" [(ngModel)]="User.Name">
     <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">
     <div class="alert alert-success my-2" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
     <div class="alert alert-danger my-2" *ngIf="!(ErrorMsg =='')">{{ErrorMsg}}</div>
@@ -14,5 +15,5 @@
         So SuccessMsg == '' ==> Gives true if the variable is fitted to Content at the line
         this.Success = Data.Message in the ts file
         -->
-        
+
 </div>

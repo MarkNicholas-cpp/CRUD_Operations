@@ -1,0 +1,24 @@
+<div class="d-flex align-items-center justify-content-center ">
+    <form #Form="ngForm" class="forms mt-2 border border-secondary rounded" (ngSubmit)="Login(Form)">
+        <div class="p-5 form">
+            <h2 class="text-center">Login</h2>
+            <div class="form-group">
+                <label for="Email">Email address</label>
+
+                <input type="email" required name="Email" ngModel #Email="ngModel" class="form-control" id="Email"
+                    placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input [type]="showPwd.value?'text':'password'" class="form-control" ngModel #Password="ngModel" id="Password"
+                    placeholder="Enter Password" name="Password" required />
+            </div>
+            <div class="form-check m-2">
+                <input class="form-check-input" type="checkbox" name="showPwd" ngModel #showPwd="ngModel"
+                    id="Hideshow" />
+                <label class="form-check-label" for="Hideshow"> Show password </label>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary w-100 d-block">
+        </div>
+    </form>
+</div>

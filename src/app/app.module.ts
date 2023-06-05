@@ -9,9 +9,11 @@ import { OperationsComponent } from './operations/operations.component';
 import { ReadComponent } from './read/read.component';
 import { DeleteComponent } from './delete/delete.component';
 import { FoodComponent } from './food/food.component';
+import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, OperationsComponent, ReadComponent, DeleteComponent, FoodComponent],
+  declarations: [AppComponent, OperationsComponent, ReadComponent, DeleteComponent, FoodComponent, NavComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
